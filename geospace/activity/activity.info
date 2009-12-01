@@ -1,0 +1,8 @@
+[Activity]
+name = geospace
+service_name = org.n52.GeoSpaceActivity
+bundle_id = org.n52.GeoSpaceActivity
+class = geospaceactivity.GeoSpaceActivity
+activity-version = 0.0.1
+icon = activity-geospace
+show_launcher = yes

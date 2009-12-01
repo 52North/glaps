@@ -1,0 +1,17 @@
+setup.py
+utils.py
+progresslistener.py
+geospaceactivity.py
+__init__.py
+views.py
+position.py
+plugin.py
+html/open-layers-template.html
+po/POTFILES.in
+po/geospace.pot
+activity/activity-geospace.svg
+activity/activity.info
+geocacheplugin/geocacheplugin.py
+geocacheplugin/__init__.py
+geotagplugin/geotagplugin.py
+geotagplugin/__init__.py
