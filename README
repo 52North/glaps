@@ -1,0 +1,59 @@
+# This README file gives information about the eclipse setup, configuration
+# and used plugins during development of the project.
+
+Quick Link
+=======
+You can download a prepared eclipse package from here:
+
+  http://download6.yoxos.com/archivecreator/download/eclipse-linux-gtk-x86-e3e501c3dac3e7f1.tar.gz
+
+EVERY PLUGIN AND ALL PREFERENCES ARE PRESET THERE!! For completeness the
+details are described below (if s/th fails), so  you can set up your environment on
+your own, though.
+
+#####################  DETAILS  #########################
+
+PYTHON-INTERPRETER
+==============
+To enjoy full content-assist you have to add more libraries directly to your Python
+interpreter (the paths may vary depending to your system):
+
+  1) /var/lib/python-support/python2.5/gtk-2.0
+  2) /var/lib/python-support/python2.5/simplejson
+  3) /var/lib/python-support/python2.5/nose
+  4) /var/lib/python-support/python2.5/xpcom
+  5) /usr/lib/python2.5/site-packages/sugar
+
+PLUGINS
+======
+
+  1) Pydev
+   http://pydev.org/
+  2) eclox
+   http://www.eclipseplugincentral.com/Web_Links-index-req-viewlink-cid-92.html
+
+ PYTHON TOOLS
+ ==========
+ During development we use the following tools
+
+  1) Pylint
+  2) nose
+  3)
+
+ CONFIGURATION
+ ==========
+ General configuration points
+
+  1) Import `eclipse-workspace-preferences.epf'
+  2) See `cfg/GeospatialLearning'.doxyfile for documentation generation
+
+ LIBRARIES
+ ======
+ Sugar has no dependency mechanism yet. So we have to ship 3rd party libraries
+ with this project. We do not want to version these libs in our VCS, so you will have
+ to download them and put them into the projects `geospace/lib' folder on your own.
+   These are the libs used the project depends on:
+
+  1) Shapely-1.0.14-py2.5.egg
+  3) mozrunner-2.3.2-py2.5.egg
+  4) simplejson-2.0.9-py2.5-linux-i686.egg (if python <= 2.5)
