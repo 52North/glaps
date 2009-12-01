@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><templates><template autoinsert="false" context="org.python.pydev.editor.templates.python" deleted="false" description="Module: Empty" enabled="true" id="org.python.pydev.editor.templates.python.module.empty" name="&lt;Empty&gt;">"""${description}"""
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+__version__ = '$$id $$'
+
+${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="and keyword" enabled="true" id="org.python.pydev.editor.templates.python.and" name="and">and ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="assert keyword" enabled="true" id="org.python.pydev.editor.templates.python.assert" name="assert">assert ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="break keyword" enabled="true" id="org.python.pydev.editor.templates.python.break" name="break">break${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Class definition (simple)" enabled="true" id="org.python.pydev.editor.templates.python.class" name="class">## ${Brief}.
+#
+# ${Details}.
+class ${class}:${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Class definition (subclass)" enabled="true" id="org.python.pydev.editor.templates.python.classo" name="classs">## ${Brief}.
+#
+# ${Details}.
+class ${class}(${object}):${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="continue keyword" enabled="true" id="org.python.pydev.editor.templates.python.continue" name="continue">continue${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="print a debug line.(use the debugger macro to define an in-module global debug method first!)" enabled="true" id="org.python.pydev.editor.templates.python.dbg" name="dbg">debug('==&gt;', ${data})${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Creates an in-module debugger" enabled="true" id="org.python.pydev.editor.templates.python.debug" name="debugger">import sys
+debugToggle = 1
+def debug(*values):
+    if debugToggle == 0: return
+    print &gt;&gt; sys.stderr, "DBG&gt;", 
+    for v in values: print &gt;&gt; sys.stderr,  v,
+    print &gt;&gt; sys.stderr, '.'
+${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Method definition (global)" enabled="true" id="org.python.pydev.editor.templates.python.def" name="def">## ${Brief}.
+#
+# ${Details}.
+def ${method}():${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Method definition (class)" enabled="true" id="org.python.pydev.editor.templates.python.defc" name="defc">def ${method}(self):${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Method definition (class - with parameters)" enabled="true" id="org.python.pydev.editor.templates.python.defp" name="defp">def ${method}(self, ${params}):${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="del keyword" enabled="true" id="org.python.pydev.editor.templates.python.del" name="del">del ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="elif keyword" enabled="true" id="org.python.pydev.editor.templates.python.elif" name="elif">elif${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="else keyword" enabled="true" id="org.python.pydev.editor.templates.python.else" name="else">else${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="equals and not equals" enabled="true" id="org.python.pydev.editor.templates.python.eq" name="eq">def __eq__(self, o):
+    if isinstance(o, self.__class__):
+        ${pass}${cursor}
+
+    return False
+
+def __ne__(self, o):
+	return not self == o</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="for keyword" enabled="true" id="org.python.pydev.editor.templates.python.for" name="for">for ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="from keyword" enabled="true" id="org.python.pydev.editor.templates.python.from" name="from">from ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="global keyword" enabled="true" id="org.python.pydev.editor.templates.python.global" name="global">global ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="import keyword" enabled="true" id="org.python.pydev.editor.templates.python.import" name="import">import ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="def __init__(self):" enabled="true" id="org.python.pydev.editor.templates.python.ini" name="ini">def __init__(self):${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="def __init__(self, ${params})" enabled="true" id="org.python.pydev.editor.templates.python.init" name="inip">def __init__(self, ${params}):${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="lambda keyword" enabled="true" id="org.python.pydev.editor.templates.python.lambda" name="lambda">lambda ${args}:${cursor}</template><template autoinsert="false" context="org.python.pydev.editor.templates.python" deleted="false" description="GPLv2.0 license header" enabled="true" name="licenseheader">#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Main function pattern." enabled="true" id="org.python.pydev.editor.templates.python.main" name="main">if __name__ == '__main__':
+    ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python.modules" deleted="false" description="Module: Class" enabled="true" id="org.python.pydev.editor.templates.python.module.class" name="Module: Class">"""${description}"""
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+__version__ = '$$id $$'
+
+class ${MyClass}(${object}):
+    '''
+    ${classdocs}
+    '''
+
+
+    def __init__(self, ${params}):
+        '''
+        ${Constructor}
+        '''
+        ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python.modules" deleted="false" description="Module: Main" enabled="true" id="org.python.pydev.editor.templates.python.module.main" name="Module: Main">"""${description}"""
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+#  ${description}.
+__version__ = '$$id $$'
+
+### ${Brief}.
+#
+# ${Details}.
+if __name__ == '__main__':
+    ${pass}${cursor}</template><template autoinsert="false" context="org.python.pydev.editor.templates.python.modules" deleted="false" description="Module: Unittest" enabled="true" id="org.python.pydev.editor.templates.python.module.unittest" name="Module: Unittest">"""${description}"""
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+__version__ = '$$id $$'
+import unittest
+
+
+class Test(unittest.TestCase):
+
+
+    def test${Name}(self):
+        ${pass}${cursor}
+
+
+if __name__ == "__main__":
+    #import sys;sys.argv = ['', 'Test.test${Name}']
+    unittest.main()</template><template autoinsert="false" context="org.python.pydev.editor.templates.python.modules" deleted="false" description="Module: Unittest with setUp and tearDown" enabled="true" id="org.python.pydev.editor.templates.python.module.setup_and_teardown" name="Module: Unittest with setUp and tearDown">"""${description}"""
+#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#
+# Copyright (C) 2009
+# by 52 North Initiative for Geospatial Open Source Software GmbH
+#
+# Contact: Andreas Wytzisk
+# 52 North Initiative for Geospatial Open Source Software GmbH
+# Martin-Luther-King-Weg 24
+# 48155 Muenster, Germany
+# info@52north.org
+#
+# This program is free software; you can redistribute and/or modify it 
+# under the terms of the GNU General Public License version 2 as 
+# published by the Free Software Foundation.
+#
+# This program is distributed WITHOUT ANY WARRANTY; even without the 
+# implied WARRANTY OF MERCHANTABILITY or FITNESS FOR A PARTICULAR 
+# PURPOSE. See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License 
+# along with this program (see gnu-gpl v2.txt). If not, write to the Free 
+# Software Foundation, Inc., 59 Temple Place - Suite 330, Boston, 
+# MA 02111-1307, USA or visit the Free Software Foundation web page, 
+# http://www.fsf.org.
+#
+# @author: $$Author: $$
+# Created: ${date}
+# Modified: $$Date: $$
+#
+#endif
+__version__ = '$$id $$'
+import unittest
+
+
+class Test(unittest.TestCase):
+
+
+    def setUp(self):
+        pass
+
+
+    def tearDown(self):
+        pass
+
+
+    def test${Name}(self):
+        ${pass}${cursor}
+
+
+if __name__ == "__main__":
+    #import sys;sys.argv = ['', 'Test.test${Name}']
+    unittest.main()</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="not keyword" enabled="true" id="org.python.pydev.editor.templates.python.not" name="not">not ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="pass keyword" enabled="true" id="org.python.pydev.editor.templates.python.pass" name="pass">pass${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="pdb" enabled="true" id="org.python.pydev.editor.templates.python.pdb" name="pd">import pdb;pdb.set_trace()</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="print" enabled="true" id="org.python.pydev.editor.templates.python.print" name="print">print ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="print current traceback" enabled="true" id="org.python.pydev.editor.templates.python.printexc" name="printexc">import traceback;traceback.print_exc()${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="property creation from inner methods" enabled="true" id="org.python.pydev.editor.templates.python.property_inner" name="property_inner">def ${prop}(): #@NoSelf
+    doc = """${Docstring}""" #@UnusedVariable
+   
+    def fget(self):
+        return self._${prop}
+       
+    def fset(self, value):
+        self._${prop} = value
+       
+    def fdel(self):
+        del self._${prop}
+       
+    return locals()
+   
+${prop} = property(**${prop}())${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="pydevd.settrace()" enabled="true" id="org.python.pydev.editor.templates.python.pydevd" name="pydevd">import pydevd;pydevd.settrace()</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="raise" enabled="true" id="org.python.pydev.editor.templates.python.raise" name="raise">raise ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="raise RuntimeError('desc')" enabled="true" id="org.python.pydev.editor.templates.python.raiseruntimeerror" name="raiseruntimeerror">raise RuntimeError('${desc}')${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="return keyword" enabled="true" id="org.python.pydev.editor.templates.python.return" name="return">return ${cursor}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Prints to sys.stderr" enabled="true" id="org.python.pydev.editor.templates.python.stderr" name="stderr">print &gt;&gt; sys.stderr, ${data}</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="Prints to sys.stdout" enabled="true" id="org.python.pydev.editor.templates.python.stdout" name="stdout">print &gt;&gt; sys.stdout, ${data}</template><template autoinsert="false" context="org.python.pydev.editor.templates.python" deleted="false" description="Complete test-case module with pyunit" enabled="true" id="org.python.pydev.editor.templates.python.testCase" name="testCase">import unittest
+
+class ${TestCase}(unittest.TestCase):
+    
+    def setUp(self):
+        unittest.TestCase.setUp(self)
+    
+    def tearDown(self):
+        unittest.TestCase.tearDown(self)
+        
+    def test${Met1}(self):
+        ${pass}${cursor}
+        
+if __name__ == '__main__':
+    unittest.main()</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="while keyword" enabled="true" id="org.python.pydev.editor.templates.python.while" name="while">while ${cursor}:</template><template autoinsert="true" context="org.python.pydev.editor.templates.python" deleted="false" description="yield keyword" enabled="true" id="org.python.pydev.editor.templates.python.yield" name="yield">yield ${cursor}</template></templates>
