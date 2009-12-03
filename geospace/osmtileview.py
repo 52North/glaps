@@ -36,8 +36,10 @@
 #endif
 __version__ = '$Id: $'
 
+import os
 import gtk
 import math
+import urllib
 import logging
 
 import geospace
@@ -51,21 +53,72 @@ init_logging(LOGGER)
 
 class OSMTileView(GeospaceCanvas):
 
+    _BASE_URL = 'http://tile.openstreetmap.org/mapnik/'
+    _TILE_PIXELS = 256
+    _tile_cols = []
+    center = (-10.0, 20.0)
+    zoom = 5
+
     def __init__(self, geospace_activity):
         GeospaceCanvas.__init__(self)
         self._control = _Control(self)
-
-        self.connect("expose_event", self.expose_cb)
+        self.viewport.connect_after("expose_event", self.expose_cb)
 
         self.hbox = gtk.HBox()
-
-        self.put(self.hbox, 0, 0)
+        self.fixed.put(self.hbox, 0, 0)
 
     def expose_cb(self, widget, event):
-        LOGGER.debug('exposing osm maptile view')
+        """Get map tiles for the currently set center, zoom value and size."""
+        LOGGER.debug('expose viewport of osmtilesview')
+
+        rect = widget.get_allocation()
+        width, height = (float(rect.width), float(rect.height))
+        n_xtiles = int(math.ceil(width / self._TILE_PIXELS))
+        n_ytiles = int(math.ceil(height / self._TILE_PIXELS))
+        #LOGGER.debug('# Tiles: %s,%s' % (n_xtiles, n_ytiles))
+
+        # xtile/ytile shall be the middle tile
+        x_tile_range = n_xtiles / 2.0
+        y_tile_range = n_ytiles / 2.0
+
+        count = len([self.hbox.remove(vtiles) for vtiles in self._tile_cols])
+        del self._tile_cols[:]
+        LOGGER.debug('%s items removed' % count)
+
+        x_num, y_num = deg2num(self.center[0], self.center[1], self.zoom)
+        for i_x in range(-(n_xtiles / 2), int(x_tile_range)):
+            n_x = x_num + i_x
+            vbox = gtk.VBox()
+            for i_y in range(-(n_ytiles / 2), int(y_tile_range)):
+                n_y = y_num + i_y
+                file_ = '/tmp/%s_%s_%s.png' % (self.zoom, n_x, n_y)
+                request = self._get_request(self.zoom, n_x, n_y)
+                LOGGER.debug(request)
+                response = urllib.urlopen(request)
+                if not os.path.exists(file_):
+                    tmp = open(file_, 'w')
+                    tmp.write(response.read())
+                    tmp.close()
+                image = gtk.Image()
+                image.set_from_file(file_)
+                vbox.pack_start(image)
+            self.hbox.pack_start(vbox)
+            self._tile_cols.append(vbox)
+        self.hbox.show_all()
+
+    def _get_request(self, zoom, xtile_num, ytile_num):
+        """Contructs request for map tile with the appropriate slippy map name.
+
+        @param zoom: The zoom factor between 0 and 17.
+        @param xtile_num: The number of the xtile.
+        @param ytile_num: The number of the ytile.
+        """
+        return self._BASE_URL + '%s/%s/%s.png' % (zoom, xtile_num, ytile_num)
+
+    def get_size(self):
+        """Returns the views current size as tuple (width, height)."""
         rect = self.get_allocation()
-        LOGGER.debug('allocation: %s/%s ; %sx%s' % \
-                     (rect.x, rect.y, rect.width, rect.height))
+        return (float(rect.width), float(rect.height))
 
     def get_map_coords(self):
         """Returns the map coordinate of the mouse pointer.
@@ -115,7 +168,7 @@ class _MapToolbar(GeospaceToolbar):
 
         #self.enable_zoom_in(self.on_zoom_in)
         #self.enable_zoom_out(self.on_zoom_out)
-        self.enable_toggle_crosslines(self.tile_view.toggle_crossline_cb)
+        self.enable_toggle_crosslines(self.tile_view)
 
         nav_callbacks = (self.on_step_west, self.on_step_north, \
                          self.on_step_south, self.on_step_east)
@@ -191,10 +244,3 @@ def num2deg(xtile, ytile, zoom):
 def num_tiles(zoom):
     return 2 ^ zoom
 
-###############################################################################
-
-if __name__ == '__main__':
-    for z in range (0, 17):
-        x_num, y_num = deg2num(52, 7.5, z)
-
-        print 'http://tile.openstreetmap.org/%s/%s/%s.png' % (x_num, y_num, z)

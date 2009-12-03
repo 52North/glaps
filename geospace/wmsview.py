@@ -68,6 +68,9 @@ class WMSView(GeospaceCanvas):
         GeospaceCanvas.__init__(self)
         self._control = _Controller(self)
 
+        self.image = gtk.Image()
+        self.fixed.put(self.image, 0, 0)
+
     def get_map_coords(self):
         """Returns the map coordinate of the mouse pointer.
 
@@ -81,11 +84,7 @@ class WMSView(GeospaceCanvas):
 
         @param file_: Path to the file to be displayed.
         """
-        if not self.image:
-            self.image = gtk.Image()
-            self.put(self.image, 0, 0)
-        else:
-            self.image.clear()
+        self.image.clear()
         self.image.set_from_file(file_)
         self.image.show()
 
@@ -210,7 +209,7 @@ class _MapToolbar(GeospaceToolbar):
         self.enable_zoom_in(self.on_zoom_in)
         self.enable_zoom_out(self.on_zoom_out)
         self.enable_zoom_bestfit(self.on_zoom_bestfit)
-        self.enable_toggle_crosslines(self.wms_view.toggle_crossline_cb)
+        self.enable_toggle_crosslines(self.wms_view)
 
         nav_callbacks = (self.on_step_west, self.on_step_north, \
                          self.on_step_south, self.on_step_east)

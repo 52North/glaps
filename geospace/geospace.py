@@ -53,7 +53,7 @@ init_logging(LOGGER)
 
 ###############################################################################
 
-class GeospaceCanvas(gtk.Fixed):
+class GeospaceCanvas(gtk.ScrolledWindow):
     """Serves as basic space which observes the current mouse position.
 
     The general GeospaceCanvas has no knowledge of the concrete CRS which is
@@ -66,27 +66,31 @@ class GeospaceCanvas(gtk.Fixed):
 
     def __init__(self):
         """Constructs simple geospace canvas."""
-        gtk.Fixed.__init__(self)
-        self.set_has_window(True)
-        self.set_events(gtk.gdk.ENTER_NOTIFY | gtk.gdk.ENTER_NOTIFY_MASK | \
-                        gtk.gdk.LEAVE_NOTIFY | gtk.gdk.LEAVE_NOTIFY_MASK | \
-                        gtk.gdk.POINTER_MOTION_HINT_MASK | \
-                        gtk.gdk.POINTER_MOTION_MASK)
-
-        self.connect("enter_notify_event", self.mouse_to_cross_cb)
-        self.connect("leave_notify_event", self.mouse_to_pointer_cb)
-        self.connect("motion_notify_event", self.motion_notify_cb)
-
-        self.x_label = gtk.Label()
-        self.y_label = gtk.Label()
-        self.area = gtk.DrawingArea()
-
-        self.put(self.x_label, 100, 300)
-        self.put(self.y_label, 12, 40)
-        self.put(self.area, 0, 0)
+        gtk.ScrolledWindow.__init__(self)
 
         self.redraw_timeout = False
         self.current_bbox = BoundingBox(None, None, None, None)
+
+        self.fixed = gtk.Fixed()
+        self.fixed.set_has_window(True)
+        self.fixed.set_events(gtk.gdk.ENTER_NOTIFY | gtk.gdk.ENTER_NOTIFY_MASK | \
+                            gtk.gdk.LEAVE_NOTIFY | gtk.gdk.LEAVE_NOTIFY_MASK | \
+                            gtk.gdk.POINTER_MOTION_HINT_MASK | \
+                            gtk.gdk.POINTER_MOTION_MASK)
+
+        self.fixed.connect("enter_notify_event", self.mouse_to_cross_cb)
+        self.fixed.connect("leave_notify_event", self.mouse_to_pointer_cb)
+        self.fixed.connect("motion_notify_event", self.motion_notify_cb)
+
+        # set when enabling toggle_crossline_toolbutton
+        self.area = None
+        self.x_label = None
+        self.y_label = None
+
+        self.viewport = gtk.Viewport()
+        self.add(self.viewport)
+        self.viewport.add(self.fixed)
+        self.show_all()
 
     def mouse_to_cross_cb(self, area, args):
         """Changes the cursor to a crosshair."""
@@ -99,7 +103,7 @@ class GeospaceCanvas(gtk.Fixed):
     def _change_cursor(self, gdk_cursor):
         """Changes the parent_windows Cursor to the given one.
 
-         @param gdk_cursor: The cursor.
+        @param gdk_cursor: The cursor.
         """
         self.get_parent_window().set_cursor(gdk_cursor)
 
@@ -128,12 +132,14 @@ class GeospaceCanvas(gtk.Fixed):
 
         If the user toggled to show the _crossline it will be drawn here.
         """
-        self.x_pixel, self.y_pixel = event.get_coords()
+        coords = event.get_coords()
+        self.x_pixel = int(coords[0])
+        self.y_pixel = int(coords[1])
         if self._crossline:
             x_coord, y_coord = self.get_map_coords()
             self.x_label.set_text('(x=%s)' % str(x_coord))
 
-            alloc = widget.get_allocation()
+            alloc = self.viewport.get_allocation()
             self.y_label.set_text('(y=%s)' % str(y_coord))
             x_label_width = self.x_label.allocation.width
             y_label_width = self.y_label.allocation.width
@@ -148,19 +154,19 @@ class GeospaceCanvas(gtk.Fixed):
             if x_coord > alloc.width/2:
                 x_x_label = 0
             else:
-                x_x_label = alloc.width - x_label_width
+                x_x_label = alloc.width - x_label_width - 5
             if y_coord > alloc.height/2:
                 y_x_label = y_coord - x_label_height
             else:
-                y_x_label = y_coord + 2
+                y_x_label = y_coord + 5
             if y_coord > alloc.height/2:
                 y_y_label = 0
             else:
                 y_y_label = alloc.height - y_label_height
             if x_coord > alloc.width/2:
-                x_y_label = x_coord - y_label_width - 2
+                x_y_label = x_coord - y_label_width - 5
             else:
-                x_y_label = x_coord + 2
+                x_y_label = x_coord + 5
 
             widget.move(self.x_label, x_x_label, y_x_label)
             widget.move(self.y_label, x_y_label, y_y_label)
@@ -244,16 +250,23 @@ class GeospaceToolbar(gtk.Toolbar):
         if name:
             self.name = name
 
-    def enable_toggle_crosslines(self, on_toggle_crosslines):
+    def enable_toggle_crosslines(self, view):
         """Enables tool to toggle crosslines.
 
-        @param on_toggle_crosslines: The callback function setting if the
-        crossline shall be drawn or not.
+        @param view: The view for which the crosslines shall be displayed.
         """
+        # add crosslines drawingarea on the top of the view
+        view.area = gtk.DrawingArea()
+        view.x_label = gtk.Label()
+        view.y_label = gtk.Label()
+        view.fixed.put(view.x_label, 0, 0)
+        view.fixed.put(view.y_label, 0, 0)
+        view.fixed.put(view.area, 0, 0)
+
         toggle_crossline_btn = ToggleToolButton('toggle-crosslines')
         toggle_crossline_btn.set_tooltip(_('Show crossline.'))
         toggle_crossline_btn.set_active(INIT_CROSSLINE)
-        toggle_crossline_btn.connect('clicked', on_toggle_crosslines)
+        toggle_crossline_btn.connect('clicked', view.toggle_crossline_cb)
         toggle_crossline_btn.show()
         self.insert(toggle_crossline_btn, -1)
 

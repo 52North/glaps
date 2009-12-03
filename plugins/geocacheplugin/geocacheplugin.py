@@ -72,8 +72,8 @@ class GeoCache(ActionProvider):
         # XXX add model
         self.model = GeospaceModel()
 
-        #self.map = WMSView(geospace_activity)
-        self.map = OSMTileView(geospace_activity)
+        self.map = WMSView(geospace_activity)
+        #self.map = OSMTileView(geospace_activity)
         self.map.register_toolbars(toolbox)
         toolbox.set_current_toolbar(1)
 
