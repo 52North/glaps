@@ -1,0 +1,8 @@
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"
+[
+  <!ENTITY fill_color "#FFFFFF">
+  <!ENTITY stroke_color "#000000">
+]>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="new 0 0 50 50" width="50" height="50">
+ <rect style="opacity:1;fill:none;stroke-width:4.75;stroke:&stroke_color;;" width="50" height="50"/>
+</svg>

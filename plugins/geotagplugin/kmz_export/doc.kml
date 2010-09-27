@@ -1,0 +1,23 @@
+<Document id="ridoo">
+<Style id='ridoo_agriculture'>
+<IconStyle>
+<Icon>
+<href>icons/ridoo_agriculture.png</href>
+</Icon>
+</IconStyle>
+</Style>
+<Placemark id="agriculture">
+<name>agriculture</name>
+<description>
+adsf
+</description>
+<styleUrl>
+#ridoo_agriculture
+</styleUrl>
+<Point>
+<coordinates>
+0.0,0.0
+</coordinates>
+</Point>
+</Placemark>
+</Document>
