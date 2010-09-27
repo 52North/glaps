@@ -1,0 +1,42 @@
+# This README file gives information about the eclipse setup, configuration
+# and used plugins during development of the project.
+
+PYTHON-INTERPRETER
+==============
+To enjoy content-assist you have to add more libraries directly to your Python
+interpreter (the paths may vary depending to your system):
+
+  1) /var/lib/python-support/python2.5/gtk-2.0
+  2) /usr/lib/python2.5/site-packages/sugar
+
+PLUGINS
+======
+
+  1) Pydev
+   http://pydev.org/
+  2) eclox
+   http://www.eclipseplugincentral.com/Web_Links-index-req-viewlink-cid-92.html
+
+ PYTHON TOOLS
+ ==========
+ During development we use the following tools
+
+  1)
+
+ CONFIGURATION
+ ==========
+ General configuration points
+
+  1) See `cfg/GeospatialLearning'.doxyfile for documentation generation
+
+ LIBRARIES
+ ======
+ Sugar has no dependency mechanism yet. So we have to ship 3rd party libraries
+ with this project. We do not want to version these libs in our VCS, so you will have
+ to download them and put them into the projects `geospace/lib' folder on your own.
+   These are the libs used the project depends on:
+
+  1) Shapely-1.0.14-py2.5
+  2) geojson
+  3) mozrunner-2.3.2-py2.5
+  4) simplejson-2.0.9-py2.5-linux-i686 (if python <= 2.5)
