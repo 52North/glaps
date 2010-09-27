@@ -1,0 +1,5 @@
+#!/bin/sh
+find -L ../geospace \! -regex '^.*\(\.svn.*\b\|gecko.*\|dist.*\|.*\.pyc\|MANIFEST\)' -type f | \
+sed 's,^../geospace/,,g' > ../geospace/MANIFEST
+#cp ../geospace/config/404.png ../geospace/tmp/
+#echo 'tmp/404.png' >> ../geospace/MANIFEST
