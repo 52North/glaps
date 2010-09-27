@@ -1,0 +1,8 @@
+[Activity]
+name = Geo
+service_name = org.n52.olpc.GeoActivity
+bundle_id = org.n52.olpc.GeoActivity
+class = geoactivity.GeoActivity
+activity-version = 0.1.0
+icon = activity-geo
+show_launcher = yes

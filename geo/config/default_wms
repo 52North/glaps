@@ -1,0 +1,5 @@
+# <URL>;<COMMA SEPERATED LIST OF LAYERS TO BE DISPLAYED>
+http://osm.wheregroup.com/cgi-bin/osm_basic.xml;OSM_Basic,Wald
+#http://wms.jpl.nasa.gov/wms.cgi;us_landsat_wgs84
+#http://services.giub.uni-bonn.de/geoserver/wms;osm_auto:boundarys,osm_auto:osm_coastlines,osm_auto:places,osm_auto:rails,osm_auto:roads,osm_auto:waterways
+#http://labs.metacarta.com/wms/vmap0.map;basic

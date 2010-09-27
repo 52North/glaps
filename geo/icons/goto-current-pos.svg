@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="550"
+   height="550"
+   id="svg4502"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   version="1.0"
+   sodipodi:docbase="/Users/eben/Desktop"
+   sodipodi:docname="goto-current-pos.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   style="display:inline"
+   inkscape:export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+   inkscape:export-xdpi="35.25"
+   inkscape:export-ydpi="35.25">
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#000000"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     gridtolerance="10000"
+     guidetolerance="10"
+     objecttolerance="10"
+     inkscape:pageopacity="1"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.83897538"
+     inkscape:cx="262.07387"
+     inkscape:cy="347.71346"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     width="55px"
+     height="55px"
+     inkscape:window-width="1009"
+     inkscape:window-height="674"
+     inkscape:window-x="285"
+     inkscape:window-y="68"
+     showgrid="false">
+    <inkscape:grid
+       empspacing="5"
+       empopacity="0.4"
+       opacity="0.2"
+       empcolor="#0000ff"
+       color="#0000ff"
+       spacingy="15px"
+       spacingx="15px"
+       originy="0px"
+       originx="0px"
+       type="xygrid"
+       id="GridFromPre046Settings"
+       visible="true"
+       enabled="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4504">
+    <marker
+       style="overflow:visible"
+       id="Arrow1Mend"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Mend">
+      <path
+         transform="matrix(-0.4,0,0,-0.4,-4,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         d="M 0,0 L 5,-5 L -12.5,0 L 5,5 L 0,0 z"
+         id="path3700" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutM"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutM">
+      <path
+         transform="scale(0.4,0.4)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         d="M 5.77,0 L -2.88,5 L -2.88,-5 L 5.77,0 z"
+         id="path3837" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.97309,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z"
+         style="font-size:12px;fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round"
+         id="path3724" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Arrow1Send"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow1Send">
+      <path
+         transform="matrix(-0.2,0,0,-0.2,-1.2,0)"
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;marker-start:none"
+         d="M 0,0 L 5,-5 L -12.5,0 L 5,5 L 0,0 z"
+         id="path3706" />
+    </marker>
+    <inkscape:perspective
+       id="perspective2493"
+       inkscape:persp3d-origin="27.5 : 18.333333 : 1"
+       inkscape:vp_z="55 : 27.5 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_x="0 : 27.5 : 1"
+       sodipodi:type="inkscape:persp3d" />
+    <marker
+       style="overflow:visible"
+       id="Arrow2Send4"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="Arrow2Send4">
+      <path
+         transform="matrix(-0.3,0,0,-0.3,0.69,0)"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.97309,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z"
+         style="font-size:12px;fill:#ffffff;fill-rule:evenodd;stroke:#ffffff;stroke-width:0.625;stroke-linejoin:round"
+         id="path10832" />
+    </marker>
+  </defs>
+  <metadata
+     id="metadata4507">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     style="display:inline"
+     inkscape:label="_swatches"
+     id="layer2"
+     inkscape:groupmode="layer">
+    <path
+       export-ydpi="35.25"
+       export-xdpi="35.25"
+       export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+       d="M 19.999998,20.026112 L 103.01186,103.26448"
+       id="path10915"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:39.99999619;stroke-linecap:round;stroke-linejoin:round;marker-start:none;marker-mid:none;marker-end:url(#Arrow2Send4);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+    <path
+       export-ydpi="35.25"
+       export-xdpi="35.25"
+       export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+       d="M 529.82305,19.995723 L 446.58468,103.00758"
+       id="path10921"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:39.99999619;stroke-linecap:round;stroke-linejoin:round;marker-start:none;marker-mid:none;marker-end:url(#Arrow2Send4);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+    <path
+       export-ydpi="35.25"
+       export-xdpi="35.25"
+       export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+       d="M 529.81369,529.87922 L 446.80183,446.64086"
+       id="path10923"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:39.99999619;stroke-linecap:round;stroke-linejoin:round;marker-start:none;marker-mid:none;marker-end:url(#Arrow2Send4);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+    <path
+       export-ydpi="35.25"
+       export-xdpi="35.25"
+       export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+       d="M 20.138321,529.84975 L 103.37668,446.83789"
+       id="path10925"
+       style="fill:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:39.99999619;stroke-linecap:round;stroke-linejoin:round;marker-start:none;marker-mid:none;marker-end:url(#Arrow2Send4);stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="icon"
+     style="display:inline">
+    <g
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.1059773;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;display:inline"
+       transform="matrix(10.070685,0,0,10.065163,-1785.1936,-1916.8029)"
+       id="g34810">
+      <path
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.1059773;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="path34239"
+         d="M 208.68479,218.0715 L 215.96404,225.3493 C 216.50591,225.88974 216.84098,226.63409 216.84098,227.46203 C 216.84098,229.10999 215.50432,230.44737 213.85348,230.44737 C 213.02842,230.44737 212.28406,230.11375 211.74075,229.57476 L 204.4615,222.29479 L 197.18369,229.5726 C 196.64326,230.11303 195.89603,230.44521 195.06953,230.44521 C 193.42373,230.44521 192.08418,229.10927 192.08418,227.46131 C 192.08418,226.63553 192.41925,225.88757 192.95752,225.34714 L 200.23821,218.06789 L 192.95896,210.79008 C 192.42069,210.25109 192.08562,209.50386 192.08562,208.6788 C 192.08562,207.0294 193.42157,205.6913 195.07313,205.6913 C 195.89675,205.6913 196.64398,206.02636 197.18441,206.56607 L 204.4615,213.84532 L 211.74075,206.56535 C 212.28406,206.02564 213.02842,205.69057 213.85492,205.69057 C 215.50432,205.69057 216.84242,207.02796 216.84242,208.67736 C 216.84242,209.50314 216.50591,210.24821 215.96548,210.79008 L 208.68479,218.0715 z"
+         export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+         export-xdpi="35.25"
+         export-ydpi="35.25" />
+      <circle
+         style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:2.92263412;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         ry="8.1219997"
+         rx="8.1219997"
+         cy="10.849"
+         cx="27.371"
+         id="circle34241"
+         r="8.1219997"
+         transform="matrix(0.7205751,0,0,0.7205751,184.73792,192.77931)"
+         export-filename="/home/henning/stud/da/olpc/workspace/GeospatialLearning/geospace/icons/goto-current-pos.png"
+         export-xdpi="35.25"
+         export-ydpi="35.25"
+         sodipodi:cx="27.371"
+         sodipodi:cy="10.849"
+         sodipodi:rx="8.1219997"
+         sodipodi:ry="8.1219997" />
+    </g>
+  </g>
+</svg>
