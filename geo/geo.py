@@ -1,7 +1,7 @@
 """
 Module defining the general geo classes and functionality.
 """
-#ifndef DOXYGEN_SHOULD_SKIP_THIS
+#\ifndef DOXYGEN_SHOULD_SKIP_THIS
 #
 # Copyright (C) 2009
 # by 52 North Initiative for Geospatial Open Source Software GmbH
@@ -31,7 +31,7 @@ Module defining the general geo classes and functionality.
 # Modified: $Date$
 #       by: $Author: $
 #
-#endif
+#\endif
 __version__ = '$Id: geo.py 179 2010-09-27 08:47:24Z  $'
 
 import os
