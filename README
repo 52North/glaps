@@ -2,7 +2,7 @@
 # and used plugins during development of the project.
 
 PYTHON-INTERPRETER
-==============
+==================
 To enjoy content-assist you have to add more libraries directly to your Python
 interpreter (the paths may vary depending to your system):
 
@@ -10,33 +10,37 @@ interpreter (the paths may vary depending to your system):
   2) /usr/lib/python2.5/site-packages/sugar
 
 PLUGINS
-======
+=======
 
   1) Pydev
    http://pydev.org/
   2) eclox
-   http://www.eclipseplugincentral.com/Web_Links-index-req-viewlink-cid-92.html
-
- PYTHON TOOLS
- ==========
- During development we use the following tools
-
-  1)
+   http://home.gna.org/eclox/#update-site
 
  CONFIGURATION
- ==========
+ =============
  General configuration points
 
   1) See `cfg/GeospatialLearning'.doxyfile for documentation generation
 
  LIBRARIES
- ======
+ =========
  Sugar has no dependency mechanism yet. So we have to ship 3rd party libraries
- with this project. We do not want to version these libs in our VCS, so you will have
- to download them and put them into the projects `geospace/lib' folder on your own.
-   These are the libs used the project depends on:
+ with this project:
 
-  1) Shapely-1.0.14-py2.5
+  1) shapely
   2) geojson
-  3) mozrunner-2.3.2-py2.5
-  4) simplejson-2.0.9-py2.5-linux-i686 (if python <= 2.5)
+  3) groupthink
+  4) owslib
+ 
+ OTHER
+ =====
+ The software depends on the gpsd package which grabs GPS data from a connected
+ GPS device. Install gpsd by means of your package manager of download it from
+ 
+   http://gpsd.berlios.de/
+   
+ NOTE: Some distributions provide dependencies to Python GPS bindings and some
+   do not. Please check within your distribution if the package python-gps will
+   be installed automatically as dependency to the gpsd package.
+   

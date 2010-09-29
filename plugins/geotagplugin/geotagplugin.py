@@ -84,9 +84,9 @@ class GeoTag(ActionProvider):
         addto_icon_path(self.ICONS_PATH)
         self._logger = logging.getLogger('GetTagPlugin')
 
-#        self.map = OSMTileView(activity)
-        from wmsview import WMSView
-        self.map = WMSView(activity)
+        self.map = OSMTileView(activity)
+#        from wmsview import WMSView
+#        self.map = WMSView(activity)
         self.model = geotagmodel.GeoTagModel(activity, self.map)
         self.map.set_size_request(920, 815)
         self.model.set_size_request(280, 815)
