@@ -1,8 +1,14 @@
-# This README file gives information about the eclipse setup, configuration
-# and used plugins during development of the project.
+# ARCHIVED
+
+This project is no longer maintained and will not receive any further updates. If you plan to continue using it, please be aware that future security issues will not be addressed.
+
 
 PYTHON-INTERPRETER
 ==================
+
+* This README file gives information about the eclipse setup, configuration
+* and used plugins during development of the project.
+
 To enjoy content-assist you have to add more libraries directly to your Python
 interpreter (the paths may vary depending to your system):
 
